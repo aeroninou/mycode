@@ -14,14 +14,14 @@ def main():
     
     print(f"My {challenge[2][1]}! The {challenge[2][0]} do {challenge[3]}!")
 
-    a = trial[2]["goggles"]
-    b = trial[2]["eyes"]
+    a = trial[2].get('goggles')
+    b = trial[2].get('eyes')
     c = trial[3]
     print(f"My {a}! The {b} do {c}!")
     
-    a = nightmare[0]["user"]["name"]["first"]
-    b = nightmare[0]["kumquat"]
-    c = nightmare[0]["d"]
+    a = nightmare[0].get('user').get('name').get('first')
+    b = nightmare[0].get('kumquat')
+    c = nightmare[0].get('d')
 
     print(f"My {a}! The {b} do {c}!")
 
