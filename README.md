@@ -7,6 +7,7 @@ This is a repo of all the work done in python during 2 week course.
 Alta3 2023 TLG learning python for software developers
 
 ## Getting Started
+![Alt Text](https://i.redd.it/5kcgpuribkp81.jpg)
 
 ### Dependencies
 
