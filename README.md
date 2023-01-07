@@ -20,5 +20,5 @@ Alta3 2023 TLG learning python for software developers
 
 ## Authors
 * Name: Aeron Inouye
-* Email: [Email Me] (mailto:Aeron.Inouye@tlgcohort.com)
-* LinkedIn: [LinkedIn] (https://www.linkedin.com/in/aeroninouye/)
+* [Email Me](mailto:Aeron.Inouye@tlgcohort.com)
+* [LinkedIn](https://www.linkedin.com/in/aeroninouye/)
