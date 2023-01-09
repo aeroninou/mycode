@@ -10,7 +10,7 @@ def main():
             for line in dracula:
                 if "vampire" in line.lower():
                     count += 1
-                    new_dracula.write(line)
+                    new_dracula.write(f"{count}): {line}")
     print(count)
 
 # call our main function
