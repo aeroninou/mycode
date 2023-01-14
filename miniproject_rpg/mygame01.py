@@ -4,10 +4,10 @@
 
 
 # import module
-import pyfiglet
+import pyfiglet as fig
 import json
 
-title = pyfiglet.figlet_format("RPG GAME")
+title = fig.figlet_format("RPG GAME")
 
 #function to open text files of ascii art of snake 
 def snake():
@@ -99,6 +99,7 @@ moves = 0
 #3 lives for each player 
 lives = 3
 
+#need this to find out if player wins or loses. will print different message after exit. 
 win = False
 
 showInstructions()
@@ -145,6 +146,13 @@ while lives > 0:
         if "item" in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']:
             #add the item to their inventory
             inventory.append(move[1])
+            
+            if move[1] == 'key':
+                key()
+            elif move[1] == 'potion':
+                potion()
+                lives += 1
+                print(f'You gained a 1 life with a potion. You now have {lives} lives!')
             #display a helpful message
             print(move[1] + ' got!')
             #delete the item key:value pair from the room's dictionary
@@ -157,32 +165,33 @@ while lives > 0:
         ## If a player enters a room with a monster
     if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
         #a monster has attacked you, if you still have lives youll continue or game end
+       
         if lives > 0:
             lives -= 1
             snake()
             print(f'A python has got you... -1 life. You have {lives} lives!')
-            continue
         else:
             break
 
-    if 'potion' in inventory:
-        potion()
-        lives += 1
-        print(f'You gained a 1 life with a potion. You now have {lives} lives!')
-        continue
+    # if 'potion' in inventory:
+       # potion()
+       # lives += 1
+       # print(f'You gained a 1 life with a potion. You now have {lives} lives!')
+       
     
-    if 'key' in inventory:
-        key()
-        continue
+   # if rooms.get(currentRoom).get("item") == 'key' and 'key' in inventory:
+       # key()
+        
     
     if currentRoom == 'Garden' and 'key' in inventory:
         win = True
         break
 
+
 if win == True:
-    print(pyfiglet.figlet_format("YOU WON ! !"))
+    print(fig.figlet_format("YOU WON ! !"))
     key()
     print(f'You escaped the house in {moves} moves with the ultra rare key...')
 else:
-    print(pyfiglet.figlet_format("YOU LOSE ! !"))
-    print(f'Got bit by the Python. {lives} left.')
+    print(fig.figlet_format("YOU LOSE ! !"))
+    print(f'Got (byte) by the Python. {lives} left.')
